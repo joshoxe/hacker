@@ -2,4 +2,4 @@
 Python clone of the classic Fallout 3/NV/4 hacking minigame
 
 ## Example
-![Python hacker image](https://i.imgur.com/IPhiQey.png)
+![Python hacker image](https://i.imgur.com/FbwChvm.png)
