@@ -1,5 +1,5 @@
-from difficulty import Difficulty
 import random
+from difficulty import Difficulty
 
 def load_words(difficulty_level):
     """Loads random words from a dictionary with length equal to difficulty"""
