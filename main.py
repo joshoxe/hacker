@@ -30,7 +30,6 @@ def select_difficulty(user_difficulty):
 
 def random_characters(word_list):
     """Get a string of random length of random non-alphanumeric characters"""
-    cr = ""
     line = ""
     count = 0
     for word in word_list:
