@@ -1,4 +1,4 @@
-import random
+import random, string
 from difficulty import Difficulty
 
 def load_words(difficulty_level):
@@ -28,6 +28,21 @@ def select_difficulty(user_difficulty):
     except KeyError:
         print("Unknown command")
 
+def random_characters(word_list):
+    """Get a string of random length of random non-alphanumeric characters"""
+    cr = ""
+    line = ""
+    count = 0
+    for word in word_list:
+        line = line + ''.join(random.choice(string.punctuation) for i in range(random.randrange(10,20)))
+        line = line + word.upper()
+    for c in line:
+        print(c, end="")
+        count = count + 1
+        if (count >= 22):
+            print()
+            count = 0
+
 def start_game():
     """Start the game and get the difficulty, word list and password"""
     print("Select difficulty: (novice, advanced, expert, master)")
@@ -40,10 +55,9 @@ def start_game():
 def game_loop(words, password):
     """Main game loop which interacts with the user"""
     attempts = 4
-    for word in words:
-            print(word.upper())
+    random_characters(words)
     while attempts > 0:
-        print("Guess? (", attempts, " left) ")
+        print("\rGuess? (", attempts, " left) ")
         guess = input()
         if guess in words:
             attempts = attempts - 1
