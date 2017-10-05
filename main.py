@@ -56,7 +56,7 @@ def game_loop(words, password):
     attempts = 4
     random_characters(words)
     while attempts > 0:
-        print("\rGuess? (", attempts, " left) ")
+        print("\rGuess? %s left" % attempts)
         guess = input()
         if guess in words:
             attempts = attempts - 1
@@ -66,8 +66,8 @@ def game_loop(words, password):
                 return
             else:
                 print("Entry denied.")
-                print("Likeness=", likeness)
+                print("Likeness=%s" % likeness)
         else:
             print("Unknown command")
-    print("You failed! The password was", password)
+    print("You failed! The password was %s" % password)
 start_game()
